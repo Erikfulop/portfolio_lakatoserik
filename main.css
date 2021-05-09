@@ -1,0 +1,503 @@
+body{
+	background-color: lightblue;
+	/*--border: 2px solid black;--*/
+	font-size: 16px;
+	font-family:  'Roboto', sans-serif;
+	font-weight: 400;
+}
+
+*, *::before, *::after{
+	box-sizing: border-box;
+	margin:  0;
+	padding:  0;
+}
+/*div{
+	margin: 6px ;
+	padding: 12px;
+	border: : 2px solid yellow;
+} */
+img{
+	max-width: 100%;
+}
+
+/*--layout--*/
+
+	body{
+		display: grid;
+		grid-template-areas: 
+			"fejlec"
+			"main"
+			"lablec"
+		;
+		grid-template-rows: max-content 1fr max-content;
+		min-height: 100vh;
+	}
+	header{
+		background-color: limegreen;
+		grid-area: fejlec;
+
+	}
+	main{
+		background-color: lightcyan;
+		grid-area: main;
+
+	}
+	footer{
+		background-color: rgba(84,189,84,10);
+		grid-area: lablec;
+		border-radius: .0rem;
+		-webkit-box-shadow: 0px -2px 11px 3px rgba(67, 136, 255, 0.51);
+		-moz-box-shadow:    0px -2px 11px 3px rgba(67, 136, 255, 0.51);
+		box-shadow:         0px -2px 11px 3px rgba(67, 136, 255, 0.51);
+		color: /*#440155;*/ #ffffff;
+		border-top: 1px solid grey;
+		font-size: 0.7rem;
+		text-align: right;
+		padding-right: 1rem;
+
+	}
+	footer .float_bal{
+		float: left;
+	}
+
+	.float_bal:hover{
+		text-decoration: underline;
+	}
+
+/*--layout-end--*/
+
+
+/*--általános-rész--*/
+
+	a{
+		text-decoration: none;
+		color: #000000;
+	}
+
+	hr{
+		margin: 0rem;
+		color: purple;
+		display: block;
+		width: 100%;
+		height: 4px;
+		background-color: black;
+		-webkit-box-shadow: 0px 0px 8px 2px rgba(2, 2, 2, 0.84);
+	-moz-box-shadow:    0px 0px 8px 2px rgba(2, 2, 2, 0.84);
+	box-shadow:         0px 0px 8px 2px rgba(2, 2, 2, 0.84);
+	border-left: 70px solid limegreen;
+	}
+/*--általános-rész-end--*/
+
+
+/*--azonos-header--*/
+
+	header{
+		line-height: 2.5rem;
+		font-size: 1.1rem;
+		text-align: left;
+		padding: 0rem 0rem;
+		
+	}
+	.fejfej{
+		font-size: 1.1rem;
+		padding: 0rem;
+		margin: 0rem;
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+
+	.logo{
+		display: inline-block;
+		cursor: pointer;
+		background-color: blue;
+		width: 2.5rem;
+		text-align: center;
+		border-radius: 1.25rem;
+		color: #ffffff;
+		font-size: 1.2rem;
+		font-weight: 400;
+		user-select: none;
+		margin: .5rem;
+		margin-left: 1rem;
+	}
+
+	.logo:hover{
+		-webkit-box-shadow: 0px 0px 8px 2px rgba(50, 50, 50, 0.84);
+	-moz-box-shadow:    0px 0px 8px 2px rgba(50, 50, 50, 0.84);
+	box-shadow:         0px 0px 8px 2px rgba(50, 50, 50, 0.84);
+
+	cursor: none;
+	}
+
+	header .header_menu{
+		margin: 0 .1rem;
+		padding: 1rem;
+
+	}
+	header .header_menu:hover{
+		background-color: white;
+		color: #333333;
+		text-decoration: ;
+		font-size: 1.2rem;
+	}
+	/*header #relativ{position: relative;}*/
+
+	.header_jobb{
+		display: inline-block;
+		margin-top: 0rem;
+
+	}
+
+	.header_bal{
+		float: left;
+		text-align: left;
+		min-width: min-content;
+	}
+
+	.balos{
+		height: 2rem;
+		margin-left: 1rem;
+		display: inline-block;
+		
+	}
+	.jobbra{
+		text-align: right;
+		float: right;
+	}
+	header a.jobbra{
+		text-align: left;
+		/*float: right;*/
+	}
+/*--azonos-header-end*/
+
+
+/*--lenyilo-menu--*/
+	#le_menu{
+		
+		border: 1px solid rgba(0,0,0,0.2);
+		border-radius: 4px;
+		text-align: left;
+		position: absolute;
+		/*--right: 2rem;
+		top: 1rem;--*/
+			-webkit-box-shadow: 0px 0px 8px 2px rgba(50, 50, 50, 0.84);
+	-moz-box-shadow:    0px 0px 8px 2px rgba(50, 50, 50, 0.84);
+	box-shadow:         0px 0px 8px 2px rgba(50, 50, 50, 0.84);
+	max-height: max-content;
+
+	overflow: hidden;
+	display: none;
+
+	}
+	#le_menu.latszodik{
+		display: block;
+	}
+
+
+	.le_almenu{
+		padding: 0 1rem;
+		line-height: 2.5rem;
+		background-color: lightgreen;
+
+	}
+
+	.le_almenu img{
+		height: 1.5rem;
+		padding-right: .5rem;
+		transform: translateY(.35rem);
+	}
+
+	.le_almenu:hover{
+		background-color: pink;
+		cursor: pointer;
+	}
+/*--lenyilo-menu-end--*/
+
+/*--bemutatkozas--*/
+	/*--menu--*/
+	.kek{
+		background-color: darkblue;
+	}
+	.kek_le_almenu{
+		background-color: lightblue;
+		padding: 0 1rem;
+		line-height: 2.5rem;
+	}
+
+	.kek_le_almenu img{
+		height: 1.5rem;
+		padding-right: .5rem;
+		transform: translateY(.35rem);
+	}
+
+
+
+	.kek_le_almenu:hover{
+		background-color: #EEEE55;
+		cursor: pointer;
+	}
+	/*--menu-end--*/
+
+	/*--fő-rész--*/
+		h1{
+			font-family: Knewave;
+			text-align: center;
+			font-size: 5rem;
+					}
+		h2{
+			text-align: center;
+			font-size: 2rem;
+		}
+		.be_kep img{
+			height: 17rem;
+			float: left;
+			margin: 1rem;
+			margin-top: 0rem;
+		}
+		.be_kep_float{
+			
+		}
+
+	/*--fő-rész-end--*/
+/*--bemutatkozas-end--*/
+
+
+/*--kep-racs--*/
+	.kepek_grid_racs{
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+		margin-left: 1rem;
+		margin-right: 1rem;
+		margin-top: 0.5rem;
+		grid-gap: 1rem;
+	}
+	.kepek_flex_racs{
+		display: flex;
+		flex-wrap: wrap;
+		margin-left: 1rem;
+	}
+	.kepek_flex_racs .kep_kartya{
+		margin-right: 1rem;
+		margin-bottom: 1rem;
+		flex-grow: 1;
+
+	}
+
+	.kep_kartya .kep{
+		height: 16rem;
+		background-color: rgba(0,0,0,.13);
+		text-align: center;
+
+	}
+
+	.kep_kartya .kep img{
+		height: 100%;
+		width: 100%;
+		object-fit: contain;
+	}
+	.kep_kartya .kep img:hover{
+		
+		
+
+	}
+	.kep_kartya:hover{
+		border: 2px solid black;
+	}
+
+	.kep_kartya p{
+		
+		font-size: 1.2rem;
+		padding-top: 0rem;
+		transform: translateY(-2.9rem);
+		background-color: #cccccc66;
+	}
+
+	.kep_kartya span{
+		font-size: .5rem
+	}
+
+	.kep_szoveg{
+		display: none;
+	}
+	.kep_szoveg:hover{
+		display: inline-block;
+	}
+
+/*--kep-racs-end--*/
+
+
+/*--fooldal--*/
+	.kephatter img{
+		display: table;
+		height: 100%;
+		width: 100%;
+		
+	}
+	.kepre{
+		
+		float: center;
+	}
+/*--fooldal-end--*/
+
+
+/*--kapcsolat--*/
+	.kapcsolat img{
+		height: 1.5rem;
+		padding-right: .5rem;
+		transform: translateY(.35rem);
+	}
+
+		.kapcsolat_grid_racs{
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+		margin-left: 1rem;
+		margin-right: 1rem;
+		margin-top: 0.5rem;
+		grid-gap: 1rem;
+	}
+
+		.kapcsolat_kartya{
+		margin-right: 1rem;
+		margin-bottom: 1rem;
+		flex-grow: 1;
+
+	}
+
+	.kapcsolat_kartya .kep{
+		height: 16rem;
+		background-color: rgba(0,0,0,.03);
+		text-align: center;
+
+	}
+
+	.kapcsolat_kartya .kep img{
+		height: 100%;
+		width: 100%;
+		object-fit: contain;
+	}
+	.kep_kartya .kep img:hover{
+		text-decoration: underline;
+	}
+
+	.kep_kartya p{
+		font-size: 1.2rem;
+		padding-top: 0rem;
+	}
+
+	.kep_kartya span{
+		font-size: .5rem
+	}
+
+	.link:hover{
+		text-decoration: underline;
+	}
+	.kapcsolat_szoveg{
+		margin-bottom: 3rem;
+		font-size: 1.2rem;
+		font-weight: 550;
+	}
+/*--kapcsolat-end--*/
+
+/*--weblapterv--*/
+	.weblapterv img{
+		
+		float: right;
+		
+	}
+	.weblapterv{
+		display: grid;
+		grid-template-areas: 
+			"felmeres"
+			"tervezes"
+			"fooldal"
+			"bemutatkozas"
+			"munkaim"
+			"kapcsolat"
+			"weblapterv"
+			"design"
+			"valtozas"
+			"anyagok"
+			"forrasok"
+			
+		;
+		grid-template-rows: max-content 1fr max-content;
+		min-height: 100vh;
+		display: grid;
+		/*grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));*/
+		margin-left: 1rem;
+		margin-right: 1rem;
+		margin-top: 0.5rem;
+		grid-gap: 1rem;
+		float: right;
+	}
+	.felmeres{
+		grid-template-areas: felmeres;
+		grid-area: felmeres;
+		margin-right: 1rem;
+		margin-left: 1rem;
+	}
+	.tervezes{
+		grid-template-areas: tervezes;
+		grid-area: tervezes;
+		margin-right: 1rem;
+		margin-left: 1rem;
+	}
+	.fooldal{
+		grid-template-areas: fooldal;
+		grid-area: fooldal;
+	}
+	.bemutatkozas{
+		grid-template-areas: bemutatkozas;
+		grid-area: bemutatkozas;
+	}
+	.munkaim{
+		grid-template-areas: munkaim;
+		grid-area: munkaim;
+	}
+	.kapcsolat2{
+		grid-template-areas: kapcsolat;
+		grid-area: kapcsolat;
+	}
+	.weblapterv{
+		grid-template-areas: weblapterv;
+		grid-area: weblapterv;
+	}
+	.design{
+		grid-template-areas: design;
+		grid-area: design;
+		margin-right: 1rem;
+		margin-left: 1rem;
+	}
+	.valtozas{
+		grid-template-areas: valtozas;
+		grid-area: valtozas;
+		margin-right: 1rem;
+		margin-left: 1rem;
+	}
+	.anyagok{
+		grid-template-areas: anyagok;
+		grid-area: anyagok;
+		margin-right: 1rem;
+		margin-left: 1rem;
+	}
+	.forrasok{
+		grid-template-areas: forrasok;
+		grid-area: forrasok;
+		margin-right: 1rem;
+		margin-left: 1rem;
+	}
+
+	/*.tervkepek{
+		display: grid;
+		grid-template-rows: max-content 1fr max-content;
+		min-height: 100vh;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+		margin-left: 1rem;
+		margin-right: 1rem;
+		margin-top: 0.5rem;
+		grid-gap: 1rem;
+		
+	}*/
+
+/*--weblapterv-end--*/
